@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Home page {% endblock %}
+
+{% block content %}
+    <div class="container vertical-center">
+
+    <div class="center-block">
+        <ul class="auth-list">
+            <li><a href="{{ fb_auth_url }}">Facebook</a></li>
+            <li><a href="#">Google+</a></li>
+            <li><a href="#">Vk.com</a></li>
+        </ul>
+    </div>
+
+    </div><!-- /.container -->
+{% endblock %}

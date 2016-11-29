@@ -1,0 +1,66 @@
+.comments{
+    margin: 15px;
+}
+
+.comment{
+    position: relative;
+}
+
+.comment__glyphicon{
+    float: left;
+    cursor: pointer;
+    margin-left: -15px;
+}
+
+.comment__description{
+    float: left;
+    padding: 0px 0px 10px 5px;
+}
+
+.comment__email, .comment__date{
+    display: inline;
+}
+
+.alert{
+    display: none;
+}
+
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* --- Auth Navigation --- */
+.auth-list{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.auth-list li{
+    float: left;
+}
+
+.auth-list a{
+    border: 1px solid #000000;
+    padding: 5px 10px;
+    color: #000000;
+}
+
+.auth-list li:not(:nth-child(1)) a{
+    border-left: none;
+}
+
+.auth-list a:hover{
+    background-color: #46b8da;
+    text-decoration: none;
+}
+
+.nav-name{
+    padding: 15px 10px;
+}
+
+
+

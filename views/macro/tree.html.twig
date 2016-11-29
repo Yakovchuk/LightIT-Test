@@ -1,0 +1,28 @@
+{% macro list(comments, step = 0) %}
+    {% import _self as tree %}
+
+    <div class="tree-list" style="margin-left: {{ step * 25 }}px;">
+        {% for comment in comments %}
+            <div class="comment" data-cid="{{ comment.id }}">
+                <div class="comment__glyphicon">
+                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                </div>
+                <div class="comment__description">
+                    <div class="comment__email">{{ comment.email }}</div>
+                    <div class="comment__date">{{ comment.created_at }}</div>
+                    <div class="comment-hidden">
+                        <div class="comment__text">{{ comment.text }}</div>
+                        <div class="comment__answer"><a href="">ответить</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            {% if comment.children %}
+                {{ tree.list(comment.children, step + 1) }}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+
+{% endmacro %}

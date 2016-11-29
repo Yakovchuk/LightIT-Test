@@ -1,0 +1,7 @@
+/.git
+/.idea
+/vendor
+
+access.log
+error.log
+composer.lock

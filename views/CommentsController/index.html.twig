@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% import "macro/tree.html.twig" as tree %}
+
+{% block title %}Comment page {% endblock %}
+
+{% block script %}
+    {{ parent() }}
+    <script type="text/javascript" src="/web/js/script.js"></script>
+{% endblock %}
+
+{% block nav %}
+    {% if fb_auth %}
+        {% include('partials/nav.html.twig') %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+    <div class="alert alert-warning" role="alert">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="text"></span>
+    </div>
+
+    {% if fb_auth %}
+        {% include('partials/form_comment.html.twig') %}
+    {% else %}
+        <h3>Для добавления и комментирования сообщений выполните <a href="/">вход</a></h3>
+    {% endif %}
+
+    <div class="comments">
+
+        {{ tree.list(comments) }}
+
+    </div>
+
+    </div><!-- /.container -->
+{% endblock %}
